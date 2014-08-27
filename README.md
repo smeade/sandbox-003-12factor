@@ -79,6 +79,14 @@ Note you can name the remote anything. You might do so in support of multi-envir
         heroku open -a sandbox-003-12factor-staging
 
 
+## Notes
+
+* The [rails_12factor gem](https://github.com/heroku/rails_12factor) is required.
+
+  See https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems.
+
+* Use Postgres locally to maintain parity between local development and the deployed app.
+
 ## TBD
 
 * System dependencies
