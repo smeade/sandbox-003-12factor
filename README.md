@@ -51,11 +51,6 @@ Demonstrates:
 
         heroku git:remote -a sandbox-003-12factor -r heroku
 
-    Note you can name the remote anything, for example:
-
-        heroku git:remote -a sandbox-003-12factor -r staging
-        heroku git:remote -a sandbox-003-12factor -r production
-
 4. [Deploy](https://devcenter.heroku.com/articles/git#deploying-code)
 
         git push heroku master
@@ -71,6 +66,18 @@ Demonstrates:
 6. Visit the deployed app
 
         heroku open
+
+## Multi-environment deploys
+
+Note you can name the remote anything. You might do so in support of multi-environment deploys. For example:
+
+        heroku apps:create sandbox-003-12factor-staging
+        heroku git:remote -a sandbox-003-12factor-staging -r staging
+        git checkout -b staging
+        git push staging staging:master
+        heroku run rake db:migrate -a sandbox-003-12factor-staging
+        heroku open -a sandbox-003-12factor-staging
+
 
 ## TBD
 
