@@ -37,7 +37,40 @@ Demonstrates:
 
 ## Deploying to Heroku
 
+1. Install the [Heroku toolbelt](https://devcenter.heroku.com/articles/getting-started-with-rails4#local-workstation-setup) on local workstation (if not already installed).
 
+2. Create the [Heroku app](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku) (if not already created).
+
+        heroku apps:create
+
+    or
+
+        heroku apps:create any-app-name-here
+
+3. Create the [Heroku remote](https://devcenter.heroku.com/articles/git#creating-a-heroku-remote) (if not already created by step 2).
+
+        heroku git:remote -a sandbox-003-12factor -r heroku
+
+    Note you can name the remote anything, for example:
+
+        heroku git:remote -a sandbox-003-12factor -r staging
+        heroku git:remote -a sandbox-003-12factor -r production
+
+4. [Deploy](https://devcenter.heroku.com/articles/git#deploying-code)
+
+        git push heroku master
+
+    or
+
+        git push heroku yourbranch:master
+
+5. Run migrations (if needed)
+
+        heroku run rake db:migrate
+
+6. Visit the deployed app
+
+        heroku open
 
 ## TBD
 
