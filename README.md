@@ -87,6 +87,10 @@ Note you can name the remote anything. You might do so in support of multi-envir
 
 * Use Postgres locally to maintain parity between local development and the deployed app.
 
+* If an app fails to start, attempting to start a console will give more detail than the app logs do.
+
+        heroku run console
+
 ## TBD
 
 * System dependencies
